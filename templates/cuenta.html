@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1114 Música</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cuenta.css') }}">
+</head>
+
+<body>
+
+    <div class="fondo">
+
+        <div class="nota nota1">♪</div>
+        <div class="nota nota2">♫</div>
+        <div class="nota nota3">♬</div>
+        <div class="nota nota4">♪</div>
+
+        <div class="contenedor">
+
+            <div class="lado-izquierdo">
+
+                <h1>1114</h1>
+
+                <h2>MÚSICA</h2>
+
+                <p>Tu música, tu espacio, tu mundo.</p>
+
+                <div class="ondas">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
+
+
+            <div class="formulario">
+
+                <!-- CREAR CUENTA -->
+
+                <div id="crearCuenta">
+
+                    <h2>Crear cuenta</h2>
+
+                    <p class="descripcion">
+                        Únete a nuestra biblioteca musical
+                    </p>
+
+                    <form action="/cuenta" method="POST" id="formularioCuenta">
+
+                        <div class="campo">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre"
+                                   placeholder="Escribe tu nombre" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="correo">Correo electrónico</label>
+                            <input type="email" id="correo" name="correo"
+                                   placeholder="ejemplo@gmail.com" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="usuario">Nombre de usuario</label>
+                            <input type="text" id="usuario" name="usuario"
+                                   placeholder="Elige tu usuario" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="contrasena">Contraseña</label>
+                            <input type="password" id="contrasena" name="contrasena"
+                                   placeholder="Crea una contraseña" required>
+                        </div>
+
+                        <button type="submit">CREAR CUENTA</button>
+
+                    </form>
+
+                    <p id="mensaje"></p>
+
+                    <p class="login">
+                        ¿Ya tienes una cuenta?
+                        <a href="#" id="mostrarLogin">Iniciar sesión</a>
+                    </p>
+
+                </div>
+
+
+                <!-- INICIAR SESIÓN -->
+
+                <div id="iniciarSesion" style="display: none;">
+
+                    <h2>Iniciar sesión</h2>
+
+                    <p class="descripcion">
+                        Entra a tu biblioteca musical
+                    </p>
+
+                    <form action="/login" method="POST">
+
+                        <div class="campo">
+                            <label for="correoLogin">Correo electrónico</label>
+                            <input type="email"
+                                   id="correoLogin"
+                                   name="correo"
+                                   placeholder="ejemplo@gmail.com"
+                                   required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="contrasenaLogin">Contraseña</label>
+                            <input type="password"
+                                   id="contrasenaLogin"
+                                   name="contrasena"
+                                   placeholder="Escribe tu contraseña"
+                                   required>
+                        </div>
+
+                        <button type="submit">INICIAR SESIÓN</button>
+
+                    </form>
+
+                    <p class="login">
+                        ¿No tienes una cuenta?
+                        <a href="#" id="mostrarCrear">Crear cuenta</a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/cuenta.js') }}"></script>
+
+</body>
+</html>

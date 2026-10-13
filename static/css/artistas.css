@@ -1,0 +1,195 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #121212;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 35px;
+}
+
+.encabezado {
+    margin-bottom: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, #242424, #111111);
+    border-radius: 18px;
+    border-bottom: 3px solid #1ed760;
+}
+
+.encabezado h1 {
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    color: #1ed760;
+}
+
+.encabezado h1 span {
+    color: #ffffff;
+}
+
+.encabezado h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.encabezado p {
+    color: #b3b3b3;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.seccion-artistas {
+    margin-bottom: 40px;
+}
+
+.seccion-artistas h2 {
+    font-size: 24px;
+    margin-bottom: 22px;
+    padding-left: 12px;
+    border-left: 4px solid #1ed760;
+}
+
+.lista-artistas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta-artista {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 22px 15px;
+    background: #181818;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s, border-color 0.25s;
+}
+
+.tarjeta-artista:hover {
+    background: #282828;
+    transform: translateY(-5px);
+}
+
+.tarjeta-artista:has(input:checked) {
+    background: #203b2b;
+    border-color: #1ed760;
+}
+
+.tarjeta-artista input {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    accent-color: #1ed760;
+    cursor: pointer;
+}
+
+.imagen-artista {
+    width: 125px;
+    height: 125px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    background: #333333;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    border: 3px solid #303030;
+    transition: border-color 0.25s, transform 0.25s;
+}
+
+.tarjeta-artista:hover .imagen-artista {
+    border-color: #1ed760;
+    transform: scale(1.04);
+}
+
+.tarjeta-artista h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 4px;
+    overflow-wrap: anywhere;
+}
+
+.acciones {
+    display: flex;
+    justify-content: center;
+    margin: 35px 0 20px;
+}
+
+.acciones button {
+    background: #1ed760;
+    color: #000000;
+    border: none;
+    border-radius: 30px;
+    padding: 16px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s;
+}
+
+.acciones button:hover {
+    background: #3be477;
+    transform: scale(1.04);
+}
+
+.acciones button:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+    .contenedor {
+        padding: 18px;
+    }
+
+    .encabezado {
+        padding: 22px;
+    }
+
+    .encabezado h1 {
+        font-size: 27px;
+    }
+
+    .encabezado h2 {
+        font-size: 23px;
+    }
+
+    .lista-artistas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .tarjeta-artista {
+        padding: 20px 8px;
+    }
+
+    .imagen-artista {
+        width: 100px;
+        height: 100px;
+    }
+
+    .tarjeta-artista h3 {
+        font-size: 14px;
+    }
+
+    .acciones button {
+        width: 100%;
+        padding: 15px;
+    }
+}
+```

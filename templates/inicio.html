@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>1114 Música</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='inicio.css') }}">
+</head>
+
+<body>
+
+    <div class="pagina">
+
+        <aside class="barra-lateral">
+
+            <div class="logo">
+                <h1>1114</h1>
+                <span>MÚSICA</span>
+            </div>
+
+            <nav>
+                <a href="/inicio" class="activo">⌂ Inicio</a>
+                <a href="#buscar">⌕ Buscar</a>
+                <a href="#biblioteca">▤ Tu biblioteca</a>
+            </nav>
+
+            <div class="biblioteca" id="biblioteca">
+                <h3>Tu música</h3>
+                <a href="#canciones">♫ Canciones</a>
+                <a href="#artistas">♬ Artistas</a>
+                <a href="#generos">▣ Géneros</a>
+                <a href="#recientes">◷ Recientes</a>
+            </div>
+
+        </aside>
+
+        <main class="contenido">
+
+            <header class="encabezado" id="buscar">
+
+                <div class="buscador">
+                    <input
+                        type="text"
+                        id="busqueda"
+                        placeholder="¿Qué quieres escuchar?"
+                    >
+
+                    <button id="boton-buscar">Buscar</button>
+                </div>
+
+                <div class="perfil">
+                    <span>{{ nombre }}</span>
+                    <div class="avatar">{{ nombre[0]|upper if nombre else "U" }}</div>
+                    <a href="/cerrar-sesion" style="color: #b3b3b3; text-decoration: none;">
+                        Salir
+                    </a>
+                </div>
+
+            </header>
+
+            <section class="bienvenida">
+
+                <p>BIENVENIDO, {{ nombre|upper }}</p>
+
+                <h2>1114 Música</h2>
+
+                <h3>Tu música, tu espacio, tu mundo.</h3>
+
+                <p>
+                    Descubre tus artistas favoritos y explora nuevos sonidos.
+                    Todo lo que te gusta, en un solo lugar.
+                </p>
+
+            </section>
+
+            <section class="seccion" id="recientes">
+
+                <div class="titulo-seccion">
+                    <h2>Escuchado recientemente</h2>
+                    <a href="#canciones">Tu biblioteca</a>
+                </div>
+
+                <div class="tarjetas" id="canciones">
+
+                    <div class="tarjeta">
+                        <div class="imagen-musica">🎵</div>
+                        <h3>Mi canción</h3>
+                        <p>Tu música favorita</p>
+                        <button class="boton-reproducir">▶</button>
+                    </div>
+
+                    <div class="tarjeta">
+                        <div class="imagen-musica">🎧</div>
+                        <h3>Nueva música</h3>
+                        <p>Descubre nuevos sonidos</p>
+                        <button class="boton-reproducir">▶</button>
+                    </div>
+
+                    <div class="tarjeta">
+                        <div class="imagen-musica">🎤</div>
+                        <h3>Mis favoritos</h3>
+                        <p>Artistas que te gustan</p>
+                        <button class="boton-reproducir">▶</button>
+                    </div>
+
+                    <div class="tarjeta">
+                        <div class="imagen-musica">💿</div>
+                        <h3>Mi colección</h3>
+                        <p>Tu biblioteca musical</p>
+                        <button class="boton-reproducir">▶</button>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="seccion" id="artistas">
+
+                <div class="titulo-seccion">
+                    <h2>Tus artistas favoritos</h2>
+                    <a href="/artistas">Ver todos</a>
+                </div>
+
+                <div class="artistas">
+
+                    {% if artistas %}
+
+                        {% for artista in artistas %}
+
+                            <div class="artista">
+                                <div class="foto-artista">🎤</div>
+                                <h3>{{ artista }}</h3>
+                            </div>
+
+                        {% endfor %}
+
+                    {% else %}
+
+                        <div class="artista">
+                            <div class="foto-artista">🎤</div>
+                            <h3>Descubre artistas</h3>
+                        </div>
+
+                        <div class="artista">
+                            <div class="foto-artista">🎧</div>
+                            <h3>Nueva música</h3>
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+            </section>
+
+            <section class="seccion" id="generos">
+
+                <div class="titulo-seccion">
+                    <h2>Explora tus géneros</h2>
+                    <a href="/generos">Ver géneros</a>
+                </div>
+
+                <div class="generos">
+
+                    {% if generos %}
+
+                        {% for genero in generos %}
+
+                            <div class="genero">{{ genero }}</div>
+
+                        {% endfor %}
+
+                    {% else %}
+
+                        <div class="genero">Reguetón</div>
+                        <div class="genero">Trap</div>
+                        <div class="genero">Rock</div>
+                        <div class="genero">Pop</div>
+                        <div class="genero">Rap</div>
+                        <div class="genero">Electrónica</div>
+
+                    {% endif %}
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <footer class="reproductor">
+
+        <div class="cancion-actual">
+
+            <div class="miniatura">🎵</div>
+
+            <div>
+                <h4 id="nombre-cancion">Ninguna canción</h4>
+                <p id="nombre-artista">Selecciona una canción</p>
+            </div>
+
+        </div>
+
+        <div class="controles">
+
+            <button id="anterior" title="Canción anterior">⏮</button>
+
+            <button id="reproducir" title="Reproducir o pausar">▶</button>
+
+            <button id="siguiente" title="Siguiente canción">⏭</button>
+
+        </div>
+
+        <div class="volumen">
+
+            <span>🔊</span>
+
+            <input
+                type="range"
+                id="control-volumen"
+                min="0"
+                max="100"
+                value="70"
+            >
+
+        </div>
+
+    </footer>
+
+    <script src="{{ url_for('static', filename='inicio.js') }}"></script>
+
+</body>
+</html>

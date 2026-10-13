@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Elige tus géneros - 1114 Música</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/generos.css') }}">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <div class="encabezado">
+            <div class="logo">1114</div>
+
+            <h1>¿Qué música te gusta?</h1>
+
+            <p>
+                Selecciona uno o varios géneros para personalizar tu experiencia.
+            </p>
+        </div>
+
+        <form action="/generos" method="POST">
+
+            <div class="generos">
+
+                {% for genero in generos %}
+
+                <label class="genero">
+
+                    <input
+                        type="checkbox"
+                        name="generos"
+                        value="{{ genero }}"
+                    >
+
+                    <span>{{ genero }}</span>
+
+                </label>
+
+                {% endfor %}
+
+            </div>
+
+            <button type="submit">
+                CONTINUAR
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

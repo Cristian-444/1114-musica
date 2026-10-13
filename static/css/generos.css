@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #080510, #180b2e, #080510);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+.contenedor {
+    width: 900px;
+    padding: 50px;
+
+    background: rgba(20, 12, 35, 0.96);
+
+    border: 1px solid #8b4de8;
+    border-radius: 25px;
+
+    box-shadow: 0 0 40px rgba(139, 77, 232, 0.3);
+}
+
+.encabezado {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #c56cff;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+.encabezado h1 {
+    font-size: 38px;
+    color: #c56cff;
+    margin-bottom: 12px;
+}
+
+.encabezado p {
+    color: #aaa0b5;
+    font-size: 16px;
+}
+
+.generos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.genero {
+    cursor: pointer;
+}
+
+.genero input {
+    display: none;
+}
+
+.genero span {
+    display: block;
+
+    padding: 22px 10px;
+
+    text-align: center;
+
+    border: 1px solid #49325e;
+    border-radius: 15px;
+
+    background: #100a19;
+    color: #ddd0e9;
+
+    transition: 0.3s;
+}
+
+.genero span:hover {
+    border-color: #c56cff;
+    transform: translateY(-3px);
+
+    box-shadow: 0 0 15px rgba(197, 108, 255, 0.2);
+}
+
+.genero input:checked + span {
+    background: #542080;
+
+    border-color: #c56cff;
+
+    box-shadow: 0 0 18px rgba(197, 108, 255, 0.35);
+
+    color: white;
+}
+
+button {
+    width: 100%;
+
+    margin-top: 35px;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(90deg, #8b35d6, #c05cff);
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 0 20px rgba(197, 108, 255, 0.5);
+}
+
+@media (max-width: 700px) {
+
+    .contenedor {
+        width: 100%;
+        padding: 35px 25px;
+    }
+
+    .generos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .generos {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor {
+        padding: 30px 20px;
+    }
+
+    .encabezado h1 {
+        font-size: 30px;
+    }
+
+}

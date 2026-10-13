@@ -1,0 +1,243 @@
+
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Elige tus artistas - 1114 Música</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/artistas.css') }}">
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <header class="encabezado">
+            <h1>1114 <span>MÚSICA</span></h1>
+            <h2>Elige tus artistas favoritos</h2>
+            <p>Selecciona los artistas que quieres escuchar.</p>
+        </header>
+
+        <form action="{{ url_for('artistas') }}" method="POST">
+
+            {% if 'Reguetón' in generos %}
+            <section class="seccion-artistas">
+                <h2>Reguetón</h2>
+
+                <div class="lista-artistas">
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Blessd">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/blessd.jfif') }}" alt="Blessd">
+                        <h3>Blessd</h3>
+                    </label>
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Kris R">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/Kris R.jfif') }}" alt="Kris R">
+                        <h3>Kris R</h3>
+                    </label>
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Feid">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/feid.jfif') }}" alt="Feid">
+                        <h3>Feid</h3>
+                    </label>
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Ryan Castro">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/ryan castro.jpg') }}" alt="Ryan Castro">
+                        <h3>Ryan Castro</h3>
+                    </label>
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Karol G">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/karol g.jfif') }}" alt="Karol G">
+                        <h3>Karol G</h3>
+                    </label>
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="J Balvin">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/j balvin.jfif') }}" alt="J Balvin">
+                        <h3>J Balvin</h3>
+                    </label>
+
+                </div>
+            </section>
+            {% endif %}
+
+            {% if 'Trap' in generos or 'Rap' in generos or 'Hip Hop' in generos %}
+            <section class="seccion-artistas">
+                <h2>Trap, Rap y Hip Hop</h2>
+
+                <div class="lista-artistas">
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Duki">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/duki.jfif') }}" alt="Duki">
+                        <h3>Duki</h3>
+                    </label>
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Mora">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/mora.jfif') }}" alt="Mora">
+                        <h3>Mora</h3>
+                    </label>
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Kris R">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/Kris R.jfif') }}" alt="Kris R">
+                        <h3>Kris R</h3>
+                    </label>
+
+                </div>
+            </section>
+            {% endif %}
+
+            {% if 'Pop' in generos %}
+            <section class="seccion-artistas">
+                <h2>Pop</h2>
+
+                <div class="lista-artistas">
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Shakira">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/shakira.jfif') }}" alt="Shakira">
+                        <h3>Shakira</h3>
+                    </label>
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Aitana">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/aitana.jfif') }}" alt="Aitana">
+                        <h3>Aitana</h3>
+                    </label>
+
+                </div>
+            </section>
+            {% endif %}
+
+            {% if 'Rock' in generos %}
+            <section class="seccion-artistas">
+                <h2>Rock</h2>
+
+                <div class="lista-artistas">
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Måneskin">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/maneskin.jfif') }}" alt="Måneskin">
+                        <h3>Måneskin</h3>
+                    </label>
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Imagine Dragons">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/imagine dragons.jfif') }}" alt="Imagine Dragons">
+                        <h3>Imagine Dragons</h3>
+                    </label>
+
+                </div>
+            </section>
+            {% endif %}
+
+            {% if 'Salsa' in generos %}
+            <section class="seccion-artistas">
+                <h2>Salsa</h2>
+
+                <div class="lista-artistas">
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Grupo Niche">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/grupo niche.jpg') }}" alt="Grupo Niche">
+                        <h3>Grupo Niche</h3>
+                    </label>
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Marc Anthony">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/marc anthony.jfif') }}" alt="Marc Anthony">
+                        <h3>Marc Anthony</h3>
+                    </label>
+
+                </div>
+            </section>
+            {% endif %}
+
+            {% if 'Bachata' in generos %}
+            <section class="seccion-artistas">
+                <h2>Bachata</h2>
+
+                <div class="lista-artistas">
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Romeo Santos">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/romeo santos.jfif') }}" alt="Romeo Santos">
+                        <h3>Romeo Santos</h3>
+                    </label>
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Prince Royce">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/prince royce.jfif') }}" alt="Prince Royce">
+                        <h3>Prince Royce</h3>
+                    </label>
+
+                </div>
+            </section>
+            {% endif %}
+
+            {% if 'Vallenato' in generos %}
+            <section class="seccion-artistas">
+                <h2>Vallenato</h2>
+
+                <div class="lista-artistas">
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Silvestre Dangond">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/silvestre dangond.jfif') }}" alt="Silvestre Dangond">
+                        <h3>Silvestre Dangond</h3>
+                    </label>
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Diomedes Díaz">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/diomedes díaz.jfif') }}" alt="Diomedes Díaz">
+                        <h3>Diomedes Díaz</h3>
+                    </label>
+
+                </div>
+            </section>
+            {% endif %}
+
+            {% if 'Electrónica' in generos %}
+            <section class="seccion-artistas">
+                <h2>Electrónica</h2>
+
+                <div class="lista-artistas">
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="David Guetta">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/david guetta.jpg') }}" alt="David Guetta">
+                        <h3>David Guetta</h3>
+                    </label>
+
+                    <label class="tarjeta-artista">
+                        <input type="checkbox" name="artistas" value="Martin Garrix">
+                        <img class="imagen-artista" src="{{ url_for('static', filename='images/artistas/martin garrix.jpg') }}" alt="Martin Garrix">
+                        <h3>Martin Garrix</h3>
+                    </label>
+
+                </div>
+            </section>
+            {% endif %}
+
+            <div class="acciones">
+                <button type="submit">Continuar a 1114 Música</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
+```
